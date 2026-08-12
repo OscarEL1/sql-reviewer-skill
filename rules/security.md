@@ -37,8 +37,9 @@ SELECT id, nombre, email FROM usuarios;
 ### Patrón de Detección
 ```regex
 DELETE\s+FROM\s+\w+\s*;
-DELETE\s+FROM\s+\w+\s+WHERE\s+1\s*=\s*1
+DELETE\s+FROM\s+\w+\s+.*(?:WHERE|AND)\s+1\s*=\s*1
 UPDATE\s+\w+\s+SET\s+[^;]+;
+UPDATE\s+\w+\s+SET\s+.*(?:WHERE|AND)\s+1\s*=\s*1
 ```
 
 ### Justificación
@@ -74,10 +75,10 @@ UPDATE usuarios SET estado = 'inactivo' WHERE id = 123;
 
 ### Patrón de Detección
 ```regex
-WHERE\s+1\s*=\s*1
-WHERE\s+'a'\s*=\s*'a'
-WHERE\s+TRUE
-WHERE\s+1
+(?:WHERE|AND)\s+1\s*=\s*1
+(?:WHERE|AND)\s+'a'\s*=\s*'a'
+(?:WHERE|AND)\s+TRUE
+(?:WHERE|AND)\s+1\b
 ```
 
 ### Justificación

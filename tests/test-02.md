@@ -22,8 +22,7 @@ La skill debería detectar **múltiples problemas**:
    - Podría retornar grandes conjuntos de resultados
    - Debería sugerir agregar LIMIT
 
-4. **LOW** - Alias de tablas mezclados sin propósito claro (Regla C1)
-   - Los alias u y o podrían ser más descriptivos
+**Nota**: Los alias `u` y `o` en JOINs son convención aceptada y NO se penalizan (excepción documentada en C1).
 
 ## Comportamiento actual
 [Por llenar después de la prueba]

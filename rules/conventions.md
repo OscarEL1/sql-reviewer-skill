@@ -9,6 +9,9 @@
 AS\s+(temp|tmp|data|info|stuff|things)\s*
 ```
 
+### Excepción Declarada
+Los alias de una sola letra en cláusulas JOIN cortas (`FROM usuarios u JOIN pedidos p ON ...`) **no se penalizan**, ya que es una convención ampliamente aceptada en SQL y no reduce la claridad en ese contexto.
+
 ### Justificación
 - Reduce mantenibilidad del código
 - Hace más difícil la depuración
